@@ -1,0 +1,104 @@
+       body {
+            font-family: Arial, sans-serif; /* Change the font to your preference */
+            background-color: #f7f7f7; /* Change the background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff; /* Change the container background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+            margin-top: 30px;
+        }
+
+        h2 {
+            font-size: 24px; /* Increase the font size */
+            color: black; /* Change the text color */
+            text-align: center; /* Center the heading */
+            margin-bottom: 20px;
+        }
+
+        h1{
+            color: black;
+        }
+
+        h3, h4, h5, h6 {
+            font-size: medium;
+            color: black; /* Change subheading text color */
+            font-weight: 550;
+        }
+
+        .main-product-p {
+            font-size: 18px;
+        }
+
+        .main-product-h3 {
+            font-size: 25px;
+        }
+
+        .main-product-h4 {
+            font-size: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the product details vertically */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Change the button color */
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Change the button color on hover */
+            border-color: #0056b3;
+        }
+
+        /* Add styles for the "Other Products You May Like" section */
+        .other-products-section {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+            margin-top: 20px; /* Add space before the section */
+            margin-bottom: 30px;
+        }
+
+        .other-products-section h2 {
+            font-size: 28px; /* Increase font size for section heading */
+            color: black; /* Navy blue for heading */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-item {
+            text-align: center;
+        }
+
+        .product-item img {
+            margin-bottom: 10px;
+        }
+
+        .product-item h4 {
+            font-size: 20px; /* Increase font size for product title */
+            color: black; /* Darker text color */
+            font-weight: bold; /* Bold font weight */
+        }
+
+        .product-item p {
+            font-size: 15px; /* Increase font size for price */
+            color: black; /* Navy blue for price */
+            font-weight: 500px; /* Bold font weight */
+        }
+    

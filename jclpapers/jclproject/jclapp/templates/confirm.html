@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Order</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link style="text/css" rel="stylesheet" href="{% static 'confirm.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Order</h1>
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <h4>Number of Products: 2</h4>
+            <div>
+                <img src="{% static 'ream2.png' %}" alt="75 gsm printing paper" width="50" height="50">
+                <h4>75 gsm A4 Printing Paper</h4>
+                <p>Ksh 2,500</p>
+                <p>Quantity: 4</p>
+            </div>
+            <hr>
+            <div>
+                <img src="{% static 'ream2.png' %}" alt="60 gsm printing paper" width="50" height="50">
+                <h4>60 gsm paper</h4>
+                <p>Ksh 2,000</p>
+                <p>Quantity: 5</p>
+            </div>
+            <hr>
+            <p>Total Price: Ksh 15,500</p>
+        </div>
+
+        <div class="order-details">
+            <h3>Order Details</h3>
+            <ul>
+                <li>First Name: John</li>
+                <li>Last Name: Doe</li>
+                <li>Email: johndoe@example.com</li>
+                <li>Phone Number: +1234567890</li>
+                <li>County: XYZ</li>
+                <li>City: ABC</li>
+                <li>District: PQR</li>
+                <li>Street Address: 123 Main St</li>
+            </ul>
+            <button class="btn btn-primary">Change Details</button>
+            <button class="btn btn-primary">Confirm Order</button>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JavaScript at the end of the body for better performance -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
