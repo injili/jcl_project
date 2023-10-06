@@ -1,10 +1,10 @@
-header {
+/*header {
     height: 180vh;
     min-height: 400px;
     background-size: cover;
     background-image: url('img/hero.jpg');
 }
-
+*/
 .hidden-spacer {
     height: 56px
 }

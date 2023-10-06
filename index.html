@@ -7,54 +7,60 @@
 
     <!-- Links to stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></link>
+    <style>
+        .banner-image {
+          background-image: url('img/hero.jpg');
+          background-size: cover;
+        }
+      </style>
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <!-- Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-    <header>
-    </header>
-    <nav class="navbar navbar-expand-sm fixed-top navbar-dark">
+    <nav class="navbar navbar-expand-sm fixed-top navbar-dark p-md-3">
         <div class="container-fluid">
             <a class="navbar-brand">Jcl copiers</a>
             <!-- Toggle button -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="bi bi-three-dots"></i>
+              </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Center links -->
-                <ul class="navbar-nav justify-content-center me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Contacts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Shop</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
+                <div class="mx-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="">Shop</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right-aligned Cart Button -->
+            <div class="ml-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <button class="b"><a class="nav-link" href=""><i class="bi bi-cart2"></i></a></button>
+                        <button class="btn btn-outline-success border-0"><a class="nav-link" href=""><i class="bi bi-cart2"></i></a></button>
                     </li>
                 </ul>
-                <!-- Center -->
             </div>
         </div>
     </nav>
+    <div
+      class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="content text-center">
+        <h1 class="text-white">WEB ZONE</h1>
+      </div>
+    </div>
     <div class="container pt-5">
         <div class="row">
             <div class="col-12">
@@ -79,5 +85,18 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        var nav = document.querySelector('nav');
+  
+        window.addEventListener('scroll', function () {
+          if (window.pageYOffset > 100) {
+            nav.style.backgroundColor = 'rgb(4,60,76)';
+            nav.classList.add('shadow');
+          } else {
+            nav.style.backgroundColor = '';
+            nav.classList.remove('shadow');
+          }
+        });
+    </script>
 </body>
 </html>
