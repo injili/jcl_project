@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
+# from django.db.models import Product, CustomUser, Order, OrderItem, Cart
 
 def main(request):
     template = loader.get_template('main.html')
