@@ -7,12 +7,6 @@
 
     <!-- Links to stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></link>
-    <style>
-        .banner-image {
-          background-image: url('img/hero.jpg');
-          background-size: cover;
-        }
-      </style>
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <!-- Favicons -->
@@ -35,17 +29,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu">
-    <nav class="navbar navbar-expand-sm fixed-top navbar-dark p-sm-3">
+    <nav class="navbar navbar-expand-bg fixed-top navbar-dark p-sm-3">
         <div class="container-fluid">
-            <a class="navbar-brand">Jcl copiers</a>
+            <a class="navbar-brand" href="#">Jcl copiers</a>
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="mobile-nav-toggle d-xl-none bi bi-list"></i></i></span>
+                <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Center links -->
                 <div class="mx-auto">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
                         </li>
@@ -60,13 +54,13 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Right-aligned Cart Button -->
-            <div class="ml-auto">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <button class="btn btn-outline-success border-0"><a class="nav-link" href=""><i class="bi bi-cart2"></i></a></button>
-                    </li>
-                </ul>
+                <div class="ml-auto">
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                          <button class="btn btn-outline-success border-0"><a class="nav-link" href=""><i class="bi bi-cart2"></i></a></button>
+                      </li>
+                  </ul>
+              </div>
             </div>
         </div>
     </nav>
@@ -74,7 +68,7 @@
       class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"
     >
       <div class="content text-center">
-        <h1 class="text-white">WEB ZONE</h1>
+        <h1 class="text-white">text goes here</h1>
       </div>
     </div>
     <section id="clients" class="clients">
@@ -84,34 +78,25 @@
           <div class="row gy-4">
   
             <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+              <img src="img/award1.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
   
             <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+              <img src="img/award2.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
   
             <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+              <img src="img/award3.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
-  
+
             <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+              <img src="img/award4.png" class="img-fluid" alt="">
             </div><!-- End Client Item -->
-  
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-2 col-md-3 col-6 client-logo">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
           </div>
   
         </div>
   
-      </section><!-- End Clients Section -->
+    </section><!-- End Clients Section -->
       <section id="about" class="about">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -119,9 +104,9 @@
   
             <div class="col-xl-5 content">
               <h3>About Us</h3>
-              <h2>Ducimus rerum libero reprehenderit cumque</h2>
-              <p>Ipsa sint sit. Quis ducimus tempore dolores impedit et dolor cumque alias maxime. Enim reiciendis minus et rerum hic non. Dicta quas cum quia maiores iure. Quidem nulla qui assumenda incidunt voluptatem tempora deleniti soluta.</p>
-              <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <h2>Professional Print Paper</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+              <a href="products.html" class="read-more" style="text-decoration: none;"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
   
             <div class="col-xl-7">
@@ -168,12 +153,12 @@
       </section><!-- End About Section -->
 
       <!-- Pricing Section - Home Page -->
-      <section id="pricing" class="pricing">
+      <section id="pricing" class="pricing" style="background-color: #fff;">
   
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Product</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+          <h2>Products</h2>
+          <p style="color: #fff;">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div><!-- End Section Title -->
   
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
@@ -183,55 +168,42 @@
             <div class="col-lg-4">
               <div class="pricing-item">
                 <h3>Paper type A</h3>
-                <div class="icon">
-                  <i class="bi bi-box"></i>
-                </div>
+                <img src="img/ream2.png">
                 <h4>80<span> gsm</span></h4>
                 <ul>
                   <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
                   <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
                   <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                  <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                  <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
                 </ul>
-                <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+                <div class="text-center"><a href="#" class="buy-btn" style="text-decoration: none;">Buy Now</a></div>
               </div>
             </div><!-- End Pricing Item -->
   
             <div class="col-lg-4">
               <div class="pricing-item featured">
                 <h3>Paper Type B</h3>
-                <div class="icon">
-                  <i class="bi bi-rocket"></i>
-                </div>
-  
+                <img src="img/ream2.png">
                 <h4>70<span> gsm</span></h4>
                 <ul>
                   <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
                   <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
                   <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                  <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                  <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
                 </ul>
-                <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+                <div class="text-center"><a href="#" class="buy-btn" style="text-decoration: none;">Buy Now</a></div>
               </div>
             </div><!-- End Pricing Item -->
   
             <div class="col-lg-4">
               <div class="pricing-item">
                 <h3>Paper Type C</h3>
-                <div class="icon">
-                  <i class="bi bi-send"></i>
-                </div>
+                <img src="img/ream2.png">
                 <h4>65<span> gsm</span></h4>
                 <ul>
                   <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
                   <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
                   <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                  <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                  <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
                 </ul>
-                <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
+                <div class="text-center"><a href="#" class="buy-btn" style="text-decoration: none;">Buy Now</a></div>
               </div>
             </div><!-- End Pricing Item -->
   
@@ -481,7 +453,7 @@
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Contact</h2>
-          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+          <p style="color: #043c4c;">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div><!-- End Section Title -->
   
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -547,8 +519,8 @@
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span>jcl copiers</span>
+            <a href="index.html" class="logo d-flex align-items-center" style="text-decoration: none;">
+              <span style="color: #fff;">jcl copiers</span>
             </a>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links d-flex mt-4">
@@ -594,7 +566,7 @@
       <div class="container copyright text-center mt-4">
         <p>&copy; <span>Copyright</span> <strong class="px-1">jcl copiers</strong> <span>All Rights Reserved</span></p>
         <div class="credits">
-          Designed and maintained by <a href="https://www.instagram.com/i_njili/">injili & france</a>
+          Proudly crafted by <a href="https://www.instagram.com/i_njili/">injili & france</a>
         </div>
       </div>
   
