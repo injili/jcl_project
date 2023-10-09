@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,45 +11,99 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <img src="{% static 'ream2.png' %}" alt="80 gsm printing paper" class="img-responsive" width="400" height="400">
-            </div>
-            <div class="col-md-6">
-                <h3 class="main-product-h3">80gsm A4 Multipurpose Quality Paper</h3>
-                <p class="main-product-p">Ksh 3,500</p>
-                <h4 class="main-product-h4">Product Specification</h4>
-                <ul>
-                    <li>Brand: JCL</li>
-                    <li>Size: A4 (210mm x 297mm)</li>
-                    <li>Weight: 80gsm</li>
-                    <li>Color: White</li>
-                    <li>Grade: All-purpose Premium Printing Paper</li>
-                    <li>Sheets in Ream: 500</li>
-                    <li>Thickness: 110um</li>
-                    <li>Quality: Very High</li>
-                </ul>
-                <button class="btn btn-primary">Add to Cart</button>
+            <div class="col-md-12">
+                {% with selected_product=products.0 %}
+                <div class="selected-product">
+                    <div class="col-md-6">
+                        <img src="{{ selected_product.image.url }}" alt="{{ selected_product.name }}" class="img-responsive" width="400" height="400">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="main-product-h3">{{ selected_product.name }}</h3>
+                        <p class="main-product-p">Ksh <span id="selected-product-price">{{ selected_product.price }}</span></p>
+                        <h4 class="main-product-h4">Product Specification</h4>
+                        <ul>
+                            <li>Brand: {{ selected_product.brand }}</li>
+                            <li>Size: {{ selected_product.size }}</li>
+                            <li>Weight: {{ selected_product.weight }}</li>
+                            <li>Color: {{ selected_product.color }}</li>
+                            <li>Grade: {{ selected_product.grade }}</li>
+                            <li>Sheets in Ream: {{ selected_product.sheets_in_ream }}</li>
+                            <li>Thickness: {{ selected_product.thickness }}</li>
+                            <li>Quality: {{ selected_product.quality }}</li>
+                        </ul>
+                        <form method="post" id="add-to-cart-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{ selected_product.id }}">
+                            <label for="quantity">Quantity:</label>
+                            <div class="quantity-control">
+                                <button type="button" class="quantity-btn" onclick="decrementQuantity()">-</button>
+                                <span id="quantity-text">1</span>
+                                <button type="button" class="quantity-btn" onclick="incrementQuantity()">+</button>
+                            </div>
+                            <p>Total Price: Ksh <span id="total-price">{{ selected_product.price }}</span></p>
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                {% endwith %}
             </div>
         </div>
     </div>
 
     <div class="container other-products-section">
         <h2><b>Other Products You May Like</b></h2>
-        <div class="row justify-content-center"> <!-- Center the products -->
+        <div class="row justify-content-center">
+            {% for product in products|slice:"1:" %}
             <div class="col-md-4 product-item">
-                <img src="{% static 'ream2.png' %}" alt="75 gsm printing paper" class="img-responsive" width="200" height="200">
-                <h5>75 gsm A4 Printing Paper</h5>
-                <p>Ksh 2,500</p>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-responsive" width="200" height="200">
+                <h5>{{ product.name }}</h5>
+                <p>Ksh {{ product.price }}</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
             </div>
-            <div class="col-md-4 product-item">
-                <img src="{% static 'ream2.png' %}" alt="60 gsm printing paper" class="img-responsive" width="200" height="200">
-                <h5>60 gsm A4 Printing Paper</h5>
-                <p>Ksh 2,000</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
     <!-- Include Bootstrap JavaScript at the end of the body for better performance -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+        function updateTotal() {
+            const selectedProductPrice = parseFloat(document.getElementById('selected-product-price').textContent);
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const total = selectedProductPrice * quantity;
+            document.getElementById('total-price').textContent = total.toFixed(2);
+        }
+    </script>
+    <script>
+        let quantity = 1; // Initialize quantity
+    
+        function incrementQuantity() {
+            quantity++;
+            updateQuantityText();
+            updateTotal();
+        }
+    
+        function decrementQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                updateQuantityText();
+                updateTotal();
+            }
+        }
+        function updateQuantityText() {
+            document.getElementById('quantity-text').textContent = quantity;
+        }
+    
+        function updateTotal() {
+            const selectedProductPrice = parseFloat(document.getElementById('selected-product-price').textContent);
+            const total = selectedProductPrice * quantity;
+            document.getElementById('total-price').textContent = total.toFixed(2);
+        }
+    </script>
 </body>
 </html>
