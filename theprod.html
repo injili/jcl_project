@@ -71,6 +71,22 @@
           border: none;
           transition: 0.3s all;
         }
+        /* Products*/
+        .product{
+          cursor: pointer;
+          margin-bottom: 2rem;
+        }
+        .product img{
+          transition: 0.3s all; 
+        }
+        .product:hover img{
+          transform: scale(1.08);
+        }
+        .product .buy-btn{
+          transform: translateY(20px);
+          opacity: 0;
+          transition: 0.3s all;
+        }
     </style>
   <link href="main.css" rel="stylesheet">
 </head>
@@ -144,6 +160,41 @@
            sed do eiusmod tempor incididunt ut labore et dolore magna 
            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
            ullamco</span>
+      </div>
+    </div>
+  </section>
+  <section id="featured" class="my-5 db-5">
+    <div class="container text-center mt-5 py-5">
+      <h3>Other Products</h3>
+      <hr>
+      <p>Here are other products you may be interested in</p>
+    </div>
+    <div class="row mx-auto container-fluid">
+      <div class="product text-center col-lg-3 col-md-4 col-12">
+        <img class="img-fluid mb-3" src="img/ream2.png">
+        <div class="star">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+        <h5 class="p-name">Type of paper 1</h5>
+        <h4 class="p-price">Ksh. 800</h4>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      <div class="product text-center col-lg-3 col-md-4 col-12">
+        <img class="img-fluid mb-3" src="img/ream2.png">
+        <div class="star">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+        <h5 class="p-name">Type of paper 2</h5>
+        <h4 class="p-price">Ksh. 800</h4>
+        <button class="buy-btn">Buy Now</button>
       </div>
     </div>
   </section>
