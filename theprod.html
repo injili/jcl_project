@@ -28,6 +28,7 @@
   <style>
         .navbar {
             background-color: #003b4d; /* Blue color as an example */
+            margin: auto;
         }
         .navbar a {
           color: #fff;
@@ -37,6 +38,38 @@
         }
         .page-title .heading .container .row .col-lg-8 h1{
           color: #003b4d;
+        }
+        .small-img-group{
+          display: flex;
+          justify-content: space-between
+        }
+        .small-img-col{
+          flex-basis: 24%;
+          cursor: pointer;
+        }
+        .sproduct {
+          display: block;
+          padding: 5x 10px;
+        }
+        .sproduct input {
+          width: 50px;
+          height: 40px;
+          border: none;
+          padding-left: 10px;
+          font-size: 16px;
+          margin-right: 10px;
+        }
+        .sproduct input:focus {
+          outline: none;
+        }
+        .buy-btn {
+          background-color: #6dbe22;
+          color: #fff;
+          opacity: 1;
+          border-radius:20px;
+          padding: 5px 20px;
+          border: none;
+          transition: 0.3s all;
         }
     </style>
   <link href="main.css" rel="stylesheet">
@@ -81,45 +114,39 @@
     </div>
   </nav>
 
-  <main id="main">
-    <div class="card">
-      <div class="left">
-          <div class="slider">
-              <i class="material-icons">arrow_back</i>
+  <section class="container sproduct my-5 pt-5">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 col-12">
+        <img class="img-fluid pb-1" src="img/ream2.png" alt="#" id="MainImg">
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img src="img/ream1.png" width="100px" class="small-img">
           </div>
-          <img src="http://res.cloudinary.com/prvnbist/image/upload/v1508603572/starwars.png" alt="star wars" class="wordmark">
-      </div>
-      <div class="right">
-          <img src="http://res.cloudinary.com/prvnbist/image/upload/v1508603573/helmet.png" alt="helmet" class="helmet">
-          <div class="productInfo">
-              <h1>STORMTROOPER <br> HELMET</h1>
-              <h2>$1,299.99</h2>
-              <div class="details">
-                  <div class="size">
-                      <h4>HELMET SIZE</h4>
-                      <p>S</p>
-                      <p>M</p>
-                      <p>L</p>
-                      <p>XL</p>
-                  </div>
-                  <div class="durability">
-                      <h3>75%</h3>
-                      <h4>DURABILITY <br> RATE</h4>
-                  </div>
-              </div>
-              <button>ADD TO CART</button>
-              <i class="material-icons fav">favorite</i>
-              <a href="#">ADD TO WISHLIST</a>
-              <div class="slider">
-                  <i class="material-icons">arrow_forward</i>
-              </div>
+          <div class="small-img-col">
+            <img src="img/ream2.png" width="100px" class="small-img">
           </div>
+          <div class="small-img-col">
+            <img src="img/ream1.png" width="100px" class="small-img">
+          </div>
+          <div class="small-img-col">
+            <img src="img/ream2.png" width="100px" class="small-img">
+          </div>
+        </div>
       </div>
-  </div>
-  
-  <a href="https://www.youtube.com/watch?v=W_F5cJIbbe4" class="youtube">watchMeCode</a>
-  
-  </main>
+      <div class="col-lg-5 col-md-12 col-12">
+        <h6>Home / Products / 80gsm</h6>
+        <h3 class="py-4">Type Of Paper A</h3>
+        <h2>Ksh. 750</h2>
+        <input type="number" value="1">
+        <button class="buy-btn">Add To Cart</button>
+        <h4>Product Details</h4>
+        <span class="mt-5 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+           sed do eiusmod tempor incididunt ut labore et dolore magna 
+           aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+           ullamco</span>
+      </div>
+    </div>
+  </section>
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
   
@@ -198,6 +225,23 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    var MainImg = document.getElementById('MainImg');
+    var smallImg = document.getElementsByClassName('small-img');
+
+    smallImg[0].onclick = function(){
+      MainImg.src = smallImg[0].src;
+    }
+    smallImg[1].onclick = function(){
+      MainImg.src = smallImg[1].src;
+    }
+    smallImg[2].onclick = function(){
+      MainImg.src = smallImg[2].src;
+    }
+    smallImg[3].onclick = function(){
+      MainImg.src = smallImg[3].src;
+    }
+  </script>
 
   <!-- Template Main JS File -->
   <script src="main.js"></script>
