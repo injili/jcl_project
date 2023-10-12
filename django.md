@@ -22,4 +22,4 @@ Navigate to the store folder then to templates. Embedded in templates is another
 Navigate to the static folder which contains three folders:
   - css - contains the main stylesheet
   - js - contains the cart script
-  - images
+  - images - contains project images
