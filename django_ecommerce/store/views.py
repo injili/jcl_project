@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.http import HttpResponse
+from django.template import loader
 import json
 import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
+
+
+def index(request):
+  template = loader.get_template('store/index.html')
+  return HttpResponse(template.render())
+
 
 def store(request):
 	data = cartData(request)
