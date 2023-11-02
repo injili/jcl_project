@@ -12,6 +12,21 @@ def index(request):
   template = loader.get_template('store/index.html')
   return HttpResponse(template.render())
 
+def products(request):
+  template = loader.get_template('store/products.html')
+  return HttpResponse(template.render())
+
+def shop80(request):
+  template = loader.get_template('store/shop80.html')
+  return HttpResponse(template.render())
+
+def shop70(request):
+  template = loader.get_template('store/shop70.html')
+  return HttpResponse(template.render())
+
+def shop65(request):
+  template = loader.get_template('store/shop65.html')
+  return HttpResponse(template.render())
 
 def store(request):
 	data = cartData(request)
