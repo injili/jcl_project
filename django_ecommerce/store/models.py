@@ -16,6 +16,7 @@ class Product(models.Model):
 	name = models.CharField(max_length=200)
 	price = models.FloatField()
 	digital = models.BooleanField(default=False,null=True, blank=True)
+	shop = models.CharField(max_length=100, null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
 
 	def __str__(self):
@@ -28,6 +29,22 @@ class Product(models.Model):
 		except:
 			url = ''
 		return url
+
+class ProductFeatures(models.Model):
+	name = models.CharField(max_length=200)
+	price = models.FloatField()
+	digital = models.BooleanField(default=False, null=True, blank=True)
+	image = models.ImageField(null=True, blank=True)
+	size = models.CharField(max_length=100, null=True, blank=True)
+	weight = models.CharField(max_length=100, null=True, blank=True)
+	shop = models.CharField(max_length=100, null=True, blank=True)
+	color = models.CharField(max_length=100, null=True, blank=True)
+	sheets_in_ream = models.PositiveIntegerField(null=True, blank=True)
+	thickness = models.CharField(max_length=100, null=True, blank=True)
+
+	def __str__(self):
+		return self.name
+
 
 class Order(models.Model):
 	customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)

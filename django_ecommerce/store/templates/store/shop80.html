@@ -267,10 +267,12 @@
               </ul>
               
             </p>
-            <h3>Ksh. 750</h3>
-            <input type="number" value="1">
+            <h3>Ksh. 800</h3>
+            {% comment %} <input type="number" value="1"> {% endcomment %}
             <br>
-            <button class="buy-btn">ADD TO CART</button>
+            <a href="{% url 'store' %}">
+              <button class="buy-btn">BUY 80gsm</button>
+            </a>            
           </div>
         </div>
       </div>
@@ -290,17 +292,19 @@
             <article>
 
               <div class="hover-zoom post-img">
-                <img src="{% static 'images/ream2.png' %}" alt="" class="img-fluid">
+                <a href="{% url 'store' %}">
+                  <img src="{% static 'images/ream2.png' %}" alt="" class="img-fluid">
+                </a>              
               </div>
 
               <p class="post-category">65gsm</p>
 
               <h2 class="title">
-                <a href="#">65gsm A4 Multipurpose Quality Papers</a>
+                <a href="{% url 'store' %}">65gsm A4 Multipurpose Quality Papers</a>
               </h2>
 
               <div class="d-flex align-items-center">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                <h5>Ksh. 650</h5>
               </div>
 
             </article>
@@ -310,17 +314,19 @@
             <article>
 
               <div class="post-img">
-                <img src="{% static 'images/ream2.png' %}" alt="" class="img-fluid">
+                <a href="{% url 'store' %}">
+                  <img src="{% static 'images/ream2.png' %}" alt="" class="img-fluid">
+                </a>
               </div>
 
               <p class="post-category">70gsm</p>
 
               <h2 class="title">
-                <a href="#">70gsm A4 Multipurpose Quality Paper</a>
+                <a href="{% url 'store' %}">70gsm A4 Multipurpose Quality Papers</a>
               </h2>
 
               <div class="d-flex align-items-center">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
+                <h5>Ksh. 700</h5>
               </div>
 
             </article>
