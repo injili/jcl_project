@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>65gsm Paper</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'images/favicon.png' %}" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Gilda+Display&family=Jost&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"">
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.0.6/dist/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul{
+          color: #003b4d;
+          font-family: 'Jost', sans-serif;
+        }
+        .navbar {
+            background-color: #003b4d; /* Blue color as an example */
+            margin: auto;
+        }
+        .navbar a {
+          color: #fff;
+        }
+        .navbar a:hover{
+          color:  #6dbe22;
+        }
+        .page-title .heading .container .row .col-lg-8 h1{
+          color: #003b4d;
+        }
+        .small-img-group{
+          display: flex;
+          justify-content: space-between
+        }
+        .small-img-col{
+          flex-basis: 24%;
+          cursor: pointer;
+        }
+        .sproduct {
+          padding-bottom: 0px;
+          padding-top: 100px;
+        }
+        .sproduct input {
+          border: none;
+          width: 50px;
+          height: 40px;
+          padding-left: 10px;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+        .sproduct input:focus {
+          outline: none;
+        }
+        .buy-btn {
+          background-color: #6dbe22;
+          color: #fff;
+          opacity: 1;
+          padding: 5px 20px;
+          border: none;
+          transition: 0.3s all;
+          border-radius: 10px;
+        }
+        .buy-btn:hover {
+          background-color: #003b4d;
+          color: #fff;
+        }
+        /* Products*/
+        .blog .posts-list article {
+          box-shadow: 0 4px 16px rgba(var(--default-color-rgb), 0.1);
+          padding: 30px;
+          height: 100%;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .blog .posts-list .post-img {
+          max-height: 240px;
+          margin: -30px -30px 15px -30px;
+          overflow: hidden;
+          transition: transform 0.3s;
+        }
+        .blog .posts-list .post-img:hover {
+          transform: scale(1.08);
+        }
+
+        .blog .posts-list .post-category {
+          font-size: 16px;
+          color: rgba(var(--default-color-rgb), 0.6);
+          margin-bottom: 10px;
+        }
+
+        .blog .posts-list .title {
+          font-size: 22px;
+          font-weight: 700;
+          padding: 0;
+          margin: 0 0 20px 0;
+        }
+
+        .blog .posts-list .title a {
+          color: var(--secondary-color);
+          transition: 0.3s;
+        }
+
+        .blog .posts-list .title a:hover {
+          color: #6dbe22;
+        }
+
+        .blog .posts-list .post-author-img {
+          width: 50px;
+          border-radius: 50%;
+          margin-right: 15px;
+        }
+
+        .blog .posts-list .post-author {
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+
+        .blog .posts-list .post-date {
+          font-size: 14px;
+          color: rgba(var(--default-color-rgb), 0.6);
+          margin-bottom: 0;
+        }
+
+        .product{
+          box-shadow: 0 4px 16px rgba(var(--default-color-rgb), 0.1);
+          padding: 30px;
+          height: 100%;
+          border-radius: 10px;
+          overflow: hidden;
+          cursor: pointer;
+          margin-bottom: 2rem;
+        }
+        .product img{
+          transition: 0.3s all; 
+        }
+        .product:hover img{
+          transform: scale(1.08);
+        }
+        .product .buy-btn1{
+          background-color: #6dbe22;
+          color: #fff;
+          transform: translateY(20px);
+          opacity: 0;
+          padding: 5px 20px;
+          border-radius: 10px;
+          border: none;
+          transition: 0.3s all;
+        }
+        .product:hover .buy-btn1{
+          transform: translateY(0);
+          opacity: 1;
+        }
+        
+        .star{
+          padding: 10px 0;
+        }
+        .star i{
+          font-size: 1rem;
+          color: rgb(255, 208, 0);
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu">
+
+  <!-- ======= Header ======= -->
+  <nav class="navbar navbar-expand-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">JCL Copiers</a>
+        <!-- Toggle button -->
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle Navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Center links -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contacts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'products' %}">Products</a>
+              </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <button class="btn btn-outline-success border-0"><a class="nav-link"><i class="bi bi-cart2"></i></a></button>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section data-aos="fade-up" class="container sproduct">
+      <div class="row">
+        <div class="col-lg-5 col-md-12 col-12">
+          <img class="img-fluid pb-1" src="{% static 'images/ream2.png' %}" alt="#" id="MainImg">
+          <div class="small-img-group">
+            <div class="small-img-col">
+              <img src="{% static 'images/ream1.png' %}" width="100px" class="small-img">
+            </div>
+            <div class="small-img-col">
+              <img src="{% static 'images/ream2.png' %}" width="100px" class="small-img">
+            </div>
+            <div class="small-img-col">
+              <img src="{% static 'images/ream1.png' %}" width="100px" class="small-img">
+            </div>
+            <div class="small-img-col">
+              <img src="{% static 'images/ream2.png' %}" width="100px" class="small-img">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-12 d-flex align-items-center">
+          <div>
+            <p>Home / Products / 65gsm</p>
+            <h2 class="py-2">65gsm A4 Multipurpose Quality Paper</h2>
+            <h3>PRODUCT DETAILS</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco
+            </p>
+            <p>
+              <ul>
+                <li>Size: A4 (210mm x 297mm)</li>
+                <li>Weight: 65gsm</li>
+                <li>Color: White</li>
+                <li>Sheets in Ream: 500</li>
+                <li>Thickness: 110um</li>
+              </ul>
+              
+            </p>
+            <h3>Ksh. 750</h3>
+            <input type="number" value="1">
+            <br>
+            <button class="buy-btn">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="blog" class="blog">
+      <div class="container text-center py-5">
+        <h3>OTHER PRODUCTS</h3>
+        <hr>
+        <p>Here are other products you may be interested in</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 posts-list">
+
+          <div class="col-xl-4 col-lg-6">
+            <article>
+
+              <div class="hover-zoom post-img">
+                <img src="{% static 'images/ream2.png' %}" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">65gsm</p>
+
+              <h2 class="title">
+                <a href="#">65gsm A4 Multipurpose Quality Papers</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                    <time datetime="2022-01-01">Jan 1, 2022</time>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+
+          <div class="col-xl-4 col-lg-6">
+            <article>
+
+              <div class="post-img">
+                <img src="{% static 'images/ream2.png' %}" alt="" class="img-fluid">
+              </div>
+
+              <p class="post-category">70gsm</p>
+
+              <h2 class="title">
+                <a href="#">70gsm A4 Multipurpose Quality Paper</a>
+              </h2>
+
+              <div class="d-flex align-items-center">
+                    <time datetime="2022-01-01">Jun 5, 2022</time>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+        </div><!-- End blog posts list -->
+      </div>
+
+    </section><!-- End Blog Section -->
+
+  </main>
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+  
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="{% url 'index' %}" class="logo d-flex align-items-center" style="text-decoration: none;">
+            <span style="color: #fff;">jcl copiers</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Products</h4>
+          <ul>
+            <li><a href="#">Paper Type A</a></li>
+            <li><a href="#">Paper Type B</a></li>
+            <li><a href="#">Paper Type C</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>A108 Adam Street</p>
+          <p>New York, NY 535022</p>
+          <p>United States</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+          <p><strong>Email:</strong> <span>info@example.com</span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1">jcl copiers</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Proudly crafted by <a href="https://www.instagram.com/i_njili/">injili & france</a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.0.6/dist/js/glightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/php-email-form@3.2.1/validate.js"></script>
+  <script>
+    // purecounter initialization
+    new PureCounter(".purecounter", {
+      start: 0,
+      end: 100,
+      duration: 2,
+    });
+  </script>
+  <script>
+    var MainImg = document.getElementById('MainImg');
+    var smallImg = document.getElementsByClassName('small-img');
+
+    smallImg[0].onclick = function(){
+      MainImg.src = smallImg[0].src;
+    }
+    smallImg[1].onclick = function(){
+      MainImg.src = smallImg[1].src;
+    }
+    smallImg[2].onclick = function(){
+      MainImg.src = smallImg[2].src;
+    }
+    smallImg[3].onclick = function(){
+      MainImg.src = smallImg[3].src;
+    }
+  </script>
+
+  <!-- Template Main JS File -->
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+
+</html>
