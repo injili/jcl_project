@@ -9,8 +9,21 @@
 				<h6><strong>{{product.name}}</strong></h6>
 				<hr>
 
-				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-				
+				<button data-product="{{product.id}}" data-action="add" class="buy-btn btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<p>
+					<style>
+						ul.feature-list, ul.feature-list li {
+						  list-style: none;
+						}
+					  </style>
+					<ul class="feature-list">
+						<li><i class="fas fa-check"></i> Size: A4 (210mm x 297mm)</li>
+						<li><i class="fas fa-check"></i> Weight: 80gsm</li>
+						<li><i class="fas fa-check"></i> Color: White</li>
+						<li><i class="fas fa-check"></i> Sheets in Ream: 500</li>
+						<li><i class="fas fa-check"></i> Thickness: 110um</li>
+					</ul>
+				  </p>
 				<a class="btn btn-outline-success" href="#">View</a>
 				<h4 style="display: inline-block; float: right"><strong>Ksh {{product.price}}</strong></h4>
 
