@@ -5,6 +5,7 @@
 - [ ] Add icons to footer in main.html
 - [ ] Implement image slide feature in shop80,shop70 and shop65
 - [ ] Do a standard navbar across all pages
+- [ ] Some pages have so much green. Style the font color across all pages.
 - [ ] Do final touches
 
 ### Note: Do the changes within the templates & store folders
