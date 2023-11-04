@@ -12,7 +12,7 @@ After updating any file in the static folder. Save the changes using the command
 ```
 python manage.py collectstatic
 ```
-#### Notes:
+### Notes:
 1. products.html page is no longer in use. Instead use store.html which can be found in the templates folder
 2. For styling use style.css
 
