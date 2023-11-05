@@ -1,21 +1,119 @@
 {% extends 'store/main.html' %}
 {% load static %}
 {% block content %}
-	<div class="row">
-		{% for product in products %}
-		<div class="col-lg-4">
-			<img class="thumbnail" src="{{product.imageURL}}">
-			<div class="box-element product">
-				<h6><strong>{{product.name}}</strong></h6>
-				<hr>
+    <!-- Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title" style="margin-top: 10px;">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-9">
+                        <h1>Products</h1>
+                        <p class="mb-0">Explore our range of paper products, including 80gsm, 70gsm, and 65gsm options. Whether you need high-quality printing, versatility, or a cost-effective solution, we have the perfect paper for your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
 
-				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-				
-				<a class="btn btn-outline-success" href="#">View</a>
-				<h4 style="display: inline-block; float: right"><strong>Ksh {{product.price}}</strong></h4>
+    <!-- 80gsm Products -->
+    <div class="row">
+        {% for product in products_80gsm %}
+            {% if product.shop == 'shop80' %}
+                <div class="col-lg-4">
+                    <a href="{% url 'shop80' %}">
+						<img class="thumbnail" src="{{ product.imageURL }}" alt="Product Image">
+					</a>					
+                    <div class="box-element product">
+                        <h6><strong>{{ product.name }}</strong></h6>
+                        <hr>
+                        <button data-product="{{ product.id }}" data-action="add" class="buy-btn btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                        <p>
+                            <style>
+                                ul.feature-list, ul.feature-list li {
+                                    list-style: none;
+                                }
+                            </style>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Size: A4 (210mm x 297mm)</li>
+                                <li><i class="fas fa-check"></i> Weight: 80gsm</li>
+                                <li><i class="fas fa-check"></i> Color: White</li>
+                                <li><i class="fas fa-check"></i> Sheets in Ream: 500</li>
+                                <li><i class="fas fa-check"></i> Thickness: 110um</li>
+                            </ul>
+                        </p>
+                        <a class="btn btn-outline-success" href="{% url 'shop80' %}">View</a>
+                        <h4 style="display: inline-block; float: right"><strong>Ksh {{ product.price }}</strong></h4>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 
-			</div>
-		</div>
-		{% endfor %}
-	</div>
+    <!-- 70gsm Products -->
+    <div class="row">
+        {% for product in products_70gsm %}
+            {% if product.shop == 'shop70' %}
+                <div class="col-lg-4">
+                    <a href="{% url 'shop70' %}">
+						<img class="thumbnail" src="{{ product.imageURL }}" alt="Product Image">
+					</a>
+                    <div class="box-element product">
+                        <h6><strong>{{ product.name }}</strong></h6>
+                        <hr>
+                        <button data-product="{{ product.id }}" data-action="add" class="buy-btn btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                        <p>
+                            <style>
+                                ul.feature-list, ul.feature-list li {
+                                    list-style: none;
+                                }
+                            </style>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Size: A4 (210mm x 297mm)</li>
+                                <li><i class="fas fa-check"></i> Weight: 80gsm</li>
+                                <li><i class="fas fa-check"></i> Color: White</li>
+                                <li><i class="fas fa-check"></i> Sheets in Ream: 500</li>
+                                <li><i class="fas fa-check"></i> Thickness: 110um</li>
+                            </ul>
+                        </p>
+                        <a class="btn btn-outline-success" href="{% url 'shop70' %}">View</a>
+                        <h4 style="display: inline-block; float: right"><strong>Ksh {{ product.price }}</strong></h4>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!-- 65gsm Products -->
+    <div class="row">
+        {% for product in products_65gsm %}
+            {% if product.shop == 'shop65' %}
+                <div class="col-lg-4">
+                    <a href="{% url 'shop65' %}">
+						<img class="thumbnail" src="{{ product.imageURL }}" alt="Product Image">
+					</a>
+                    <div class="box-element product">
+                        <h6><strong>{{ product.name }}</strong></h6>
+                        <hr>
+                        <button data-product="{{ product.id }}" data-action="add" class="buy-btn btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                        <p>
+                            <style>
+                                ul.feature-list, ul.feature-list li {
+                                    list-style: none;
+                                }
+                            </style>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i> Size: A4 (210mm x 297mm)</li>
+                                <li><i class="fas fa-check"></i> Weight: 80gsm</li>
+                                <li><i class="fas fa-check"></i> Color: White</li>
+                                <li><i class="fas fa-check"></i> Sheets in Ream: 500</li>
+                                <li><i class="fas fa-check"></i> Thickness: 110um</li>
+                            </ul>
+                        </p>
+                        <a class="btn btn-outline-success" href="{% url 'shop65' %}">View</a>
+                        <h4 style="display: inline-block; float: right"><strong>Ksh {{ product.price }}</strong></h4>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endblock content %}

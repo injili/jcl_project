@@ -29,15 +29,24 @@ def shop65(request):
   return HttpResponse(template.render())
 
 def store(request):
-	data = cartData(request)
+    # Assuming you want to keep the cart data retrieval logic
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
 
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
+    # Filter products by weight
+    products_80gsm = Product.objects.filter(shop='shop80')
+    products_70gsm = Product.objects.filter(shop='shop70')
+    products_65gsm = Product.objects.filter(shop='shop65')
 
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'store/store.html', context)
+    context = {
+        'products_80gsm': products_80gsm,  # Pass the filtered products to the template
+        'products_70gsm': products_70gsm,
+        'products_65gsm': products_65gsm,
+        'cartItems': cartItems,
+    }
+    return render(request, 'store/store.html', context)
 
 
 def cart(request):

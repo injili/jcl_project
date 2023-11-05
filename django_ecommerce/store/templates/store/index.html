@@ -170,42 +170,48 @@
             <div class="col-lg-4">
               <div class="pricing-item">
                 <h3>Paper type A</h3>
-                <img src="{% static 'images/ream2.png' %}">
+                <a href="{% url 'shop80' %}">
+                  <img src="{% static 'images/ream2.png' %}" alt="Image Description">
+                </a>              
                 <h4>80<span> gsm</span></h4>
                 <ul>
                   <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
                   <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
                   <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
                 </ul>
-                <div class="text-center"><a href="#" class="buy-btn" style="text-decoration: none;">Buy Now</a></div>
+                <div class="text-center"><a href="{% url 'shop80' %}" class="buy-btn" style="text-decoration: none;">View Product</a></div>
               </div>
             </div><!-- End Pricing Item -->
   
             <div class="col-lg-4">
               <div class="pricing-item featured">
                 <h3>Paper Type B</h3>
-                <img src="{% static 'images/ream2.png' %}">
+                <a href="{% url 'shop70' %}">
+                  <img src="{% static 'images/ream2.png' %}" alt="Image Description">
+                </a> 
                 <h4>70<span> gsm</span></h4>
                 <ul>
                   <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
                   <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
                   <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
                 </ul>
-                <div class="text-center"><a href="#" class="buy-btn" style="text-decoration: none;">Buy Now</a></div>
+                <div class="text-center"><a href="{% url 'shop70' %}" class="buy-btn" style="text-decoration: none;">View Product</a></div>
               </div>
             </div><!-- End Pricing Item -->
   
             <div class="col-lg-4">
               <div class="pricing-item">
                 <h3>Paper Type C</h3>
-                <img src="{% static 'images/ream2.png' %}">
+                <a href="{% url 'shop65' %}">
+                  <img src="{% static 'images/ream2.png' %}" alt="Image Description">
+                </a> 
                 <h4>65<span> gsm</span></h4>
                 <ul>
                   <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
                   <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
                   <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
                 </ul>
-                <div class="text-center"><a href="#" class="buy-btn" style="text-decoration: none;">Buy Now</a></div>
+                <div class="text-center"><a href="{% url 'shop65' %}" class="buy-btn" style="text-decoration: none;">View Product</a></div>
               </div>
             </div><!-- End Pricing Item -->
   
@@ -547,9 +553,9 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Products</h4>
             <ul>
-              <li><a href="#">Paper Type A</a></li>
-              <li><a href="#">Paper Type B</a></li>
-              <li><a href="#">Paper Type C</a></li>
+              <li><a href="{% url 'shop80' %}">Paper Type A</a></li>
+              <li><a href="{% url 'shop80' %}">Paper Type B</a></li>
+              <li><a href="{% url 'shop80' %}">Paper Type C</a></li>
             </ul>
           </div>
   
